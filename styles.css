@@ -60,6 +60,12 @@ header.site-header {
   font-size: 1.15rem;
   color: #fff;
   letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.brand:hover {
+  text-decoration: none;
+  color: #fff;
 }
 
 .brand span {
@@ -239,6 +245,51 @@ footer.site-footer {
 
 footer.site-footer a {
   font-weight: 600;
+}
+
+.copy-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.35rem 0.4rem 0.35rem 0.75rem;
+}
+
+.copy-row code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+
+.copy-btn {
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--carolina-blue);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  white-space: nowrap;
+}
+
+.copy-btn:hover {
+  background: var(--navy);
+}
+
+.copy-btn.copied {
+  background: #2e7d32;
+}
+
+.card .copy-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 ul.link-list li {

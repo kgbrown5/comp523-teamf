@@ -10,10 +10,9 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <div class="brand">Team <span>F</span> &mdash; COMP 523</div>
+    <a class="brand" href="index.html">Team <span>F</span> &mdash; COMP 523</a>
     <nav class="main-nav" aria-label="Primary">
       <ul>
-        <li><a href="index.html">Home</a></li>
         <li><a href="team.html" aria-current="page">Team &amp; Contact</a></li>
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="rules.html">Team Rules</a></li>
@@ -33,22 +32,34 @@
     <div class="card person-card">
       <span class="role-tag">TODO: Role</span>
       <h3>Katie Brown</h3>
-      <p><a href="mailto:kgbro@unc.edu">kgbro@unc.edu</a></p>
+      <div class="copy-row">
+        <code id="email-katie">kgbro@unc.edu</code>
+        <button type="button" class="copy-btn" data-copy-target="email-katie" data-label="Copy">Copy</button>
+      </div>
     </div>
     <div class="card person-card">
       <span class="role-tag">TODO: Role</span>
       <h3>Caroline Bryan</h3>
-      <p><a href="mailto:cgbryan@unc.edu">cgbryan@unc.edu</a></p>
+      <div class="copy-row">
+        <code id="email-caroline">cgbryan@unc.edu</code>
+        <button type="button" class="copy-btn" data-copy-target="email-caroline" data-label="Copy">Copy</button>
+      </div>
     </div>
     <div class="card person-card">
       <span class="role-tag">TODO: Role</span>
       <h3>Sadie Sawyer</h3>
-      <p><a href="mailto:sadies@email.unc.edu">sadies@email.unc.edu</a></p>
+      <div class="copy-row">
+        <code id="email-sadie">sadies@email.unc.edu</code>
+        <button type="button" class="copy-btn" data-copy-target="email-sadie" data-label="Copy">Copy</button>
+      </div>
     </div>
     <div class="card person-card">
       <span class="role-tag">TODO: Role</span>
       <h3>Luke Briden</h3>
-      <p><a href="mailto:lkbriden@unc.edu">lkbriden@unc.edu</a></p>
+      <div class="copy-row">
+        <code id="email-luke">lkbriden@unc.edu</code>
+        <button type="button" class="copy-btn" data-copy-target="email-luke" data-label="Copy">Copy</button>
+      </div>
     </div>
   </div>
   <p class="placeholder">
@@ -56,15 +67,20 @@
     person is primarily responsible for this semester.
   </p>
 
-  <p style="margin-top:1rem;">
-    <a class="btn" href="mailto:kgbro@unc.edu,cgbryan@unc.edu,sadies@email.unc.edu,lkbriden@unc.edu">Email the Whole Team</a>
-  </p>
+  <p style="margin-top:1rem;">Email the whole team &mdash; copy and paste into your email client:</p>
+  <div class="copy-row">
+    <code id="team-emails-all">kgbro@unc.edu, cgbryan@unc.edu, sadies@email.unc.edu, lkbriden@unc.edu</code>
+    <button type="button" class="copy-btn" data-copy-target="team-emails-all" data-label="Copy">Copy</button>
+  </div>
 
   <h2>Client</h2>
   <div class="card person-card">
     <h3 class="placeholder">[Client Name] &mdash; TODO</h3>
     <p class="placeholder">TODO: Title / organization</p>
-    <p class="placeholder">TODO: <a href="mailto:client@example.com">client@example.com</a></p>
+    <div class="copy-row">
+      <code id="email-client" class="placeholder">TODO: client@example.com</code>
+      <button type="button" class="copy-btn" data-copy-target="email-client" data-label="Copy">Copy</button>
+    </div>
   </div>
 
   <h2>Consultants / Other Contacts</h2>
@@ -75,11 +91,13 @@
 </main>
 
 <footer class="site-footer">
-  <p>
-    Team F &mdash; COMP 523, UNC-Chapel Hill &middot;
-    <a href="mailto:kgbro@unc.edu,cgbryan@unc.edu,sadies@email.unc.edu,lkbriden@unc.edu">Email the whole team</a>
-  </p>
+  <p>Team F &mdash; COMP 523, UNC-Chapel Hill</p>
+  <div class="copy-row">
+    <code id="footer-team-emails">kgbro@unc.edu, cgbryan@unc.edu, sadies@email.unc.edu, lkbriden@unc.edu</code>
+    <button type="button" class="copy-btn" data-copy-target="footer-team-emails" data-label="Copy">Copy</button>
+  </div>
 </footer>
 
+<script src="script.js" defer></script>
 </body>
 </html>
