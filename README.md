@@ -1,17 +1,13 @@
 # comp523-teamf
 Project Website for COMP523 Team F
 
-Static HTML/CSS site, deployable on Vercel with zero config (no build step).
+Static HTML/CSS site made with Claude Code, deployed using Vercel.
 
 ## Local preview
 
 ```bash
 npx serve .
 ```
-
-## Deploy
-
-Push to GitHub and import the repo in Vercel, or run `vercel` from this directory.
 
 ## Structure
 
