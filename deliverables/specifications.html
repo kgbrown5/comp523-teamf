@@ -25,10 +25,9 @@
 </header>
 
   <main>
-  <h1>Measles Dashboard</h1>
-  <p>Specification Document</p>
+  <h1>D1: Specification Document</h1>
 
-  <p>Current Site: Single-page Vite + React 18 app. Page chrome is React; the interactive map is D3 over us-atlas TopoJSON. Deployed as a static site on GitHub Pages under the /measles-dashboard/ base path.</p>
+  <p>Current site: Single-page Vite + React 18 app. Page chrome is React; the interactive map is D3 over us-atlas TopoJSON. Deployed as a static site on GitHub Pages under the /measles-dashboard/ base path.</p>
 
   <p>GitHub: <a href="https://github.com/ACCIDDA/measles-dashboard" target="_blank" rel="noopener">https://github.com/ACCIDDA/measles-dashboard</a></p>
 
@@ -40,8 +39,10 @@
     <li>Decouple hard-coded NC and CA data from the existing project repository</li>
     <li>Generalize to measles-dashboard-StateCode API that other states can follow</li>
     <li>Accept data from measles-XX state repositories, given that no 404 error is received</li>
-    <li>404 error recieved → state will remain null/grey</li>
-    <li>No error → populate map with state’s data</li>
+    <ul>
+        <li>404 error recieved → state will remain null/grey</li>
+        <li>No error → populate map with state’s data</li>
+    </ul>
   </ul>
 
   <h4>Perhaps</h4>
