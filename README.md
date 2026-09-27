@@ -17,6 +17,6 @@ npx serve .
 - `rules.html` — Team rules
 - `journal.html` — Meeting journal (reverse chronological)
 - `links.html` — Related links
-- `deliverables.html` — Deliverables repository
-
-Content marked `TODO` throughout is a placeholder for the team to fill in.
+- `deliverables`
+    - `index.html` — Deliverables repository
+    - `specifications.html` — D1: Specifications
