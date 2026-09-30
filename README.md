@@ -16,7 +16,7 @@ npx serve .
 - `schedule.html` — Recurring meeting schedule
 - `rules.html` — Team rules
 - `journal.html` — Meeting journal (reverse chronological)
-- `links.html` — Related links
 - `deliverables`
-    - `index.html` — Deliverables repository
     - `specifications.html` — D1: Specifications
+    - `architecture.html` — Architecture Analysis
+    - `systems-metaphor.html` — Systems Metaphor

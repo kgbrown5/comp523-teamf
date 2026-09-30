@@ -304,3 +304,32 @@ ul.link-list li {
     gap: 0.25rem 0.6rem;
   }
 }
+
+/* Deliverables navigation dropdown */
+nav.main-nav li.nav-dropdown {
+  position: relative;
+}
+
+nav.main-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  min-width: 13rem;
+  padding: 0.35rem 0;
+  background: var(--navy);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+nav.main-nav li.nav-dropdown:hover > .dropdown-menu,
+nav.main-nav li.nav-dropdown:focus-within > .dropdown-menu {
+  display: block;
+}
+
+nav.main-nav .dropdown-menu a {
+  display: block;
+  padding: 0.55rem 0.8rem;
+  white-space: nowrap;
+}
