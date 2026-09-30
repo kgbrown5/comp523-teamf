@@ -25,15 +25,12 @@
 </header>
 
 <main>
-  <h1>D2: Design Document</h1>
+  <h1>Architecture lalalala</h1>
 
   <p>Current site: Single-page Vite + React 18 app. Page chrome is React; the interactive map is D3 over us-atlas TopoJSON. Deployed as a static site on GitHub Pages under the /measles-dashboard/ base path.</p>
 
   <p>GitHub: <a href="https://github.com/ACCIDDA/measles-dashboard" target="_blank" rel="noopener">https://github.com/ACCIDDA/measles-dashboard</a></p>
 
-  <h2>I. Architecture</h2>
-
-  <!-- Insert final architecture diagram here -->
    <img src="../measles_dashboard_architecture_v3.png" alt="Final architecture diagram of the measles dashboard" style="max-width: 100%; height: auto;">
 
   <p>The dashboard is a static single-page app (Vite + React 18) with no backend. Its URL drives everything: App.jsx parses the route into a zoom level (national, state, county) and passes it, along with a small amount of UI state, to the page chrome and the map.</p>
@@ -59,68 +56,6 @@
     <li>The R scripts are run offline and are not part of prebuild. This differs from what issue #20 originally planned.</li>
     <li>The architecture doc says the pipeline is "in flux" and will be updated after #20 lands. It seems like #20 is finished, so should the pipeline be updated as final?</li>
     <li>The R script headers still describe per-county files as producer output, but the county files are now derived by Node. The diagram follows the Node script.</li>
-  </ul>
-
-  <h2>II. Code Repository</h2>
-  <p>ACCIDDA Measles Dashboard GitHub: <a href="https://github.com/ACCIDDA/measles-dashboard" target="_blank" rel="noopener">https://github.com/ACCIDDA/measles-dashboard</a></p>
-
-  <h3>README from client repository:</h3>
-
-  <h4>Measles Vaccination (MMR) Coverage Dashboard</h4>
-
-  <p>An interactive dashboard visualizing measles (MMR) vaccination coverage across the United States, drilling down from a national overview to individual states, counties, and K–5 schools. Built by <a href="https://github.com/ACCIDDA" target="_blank" rel="noopener">ACCIDDA</a>.</p>
-
-  <p>🔗 <strong>Live:</strong> <a href="https://accidda.github.io/measles-dashboard/" target="_blank" rel="noopener">https://accidda.github.io/measles-dashboard/</a></p>
-
-  <h5>What it shows</h5>
-  <ul>
-    <li><strong>National view:</strong> every US state shaded by its overall coverage; states without data yet render greyed.</li>
-    <li><strong>State view:</strong> click a state to zoom into its counties, each colored by coverage tier (high / medium / low) or by an under-vaccination lens.</li>
-    <li><strong>County view:</strong> drill into a county to see its individual K–5 schools, each with a per-grade coverage breakdown.</li>
-  </ul>
-
-  <p>Coverage estimates come from the <a href="https://github.com/ACCIDDA/imuGAP" target="_blank" rel="noopener">imuGAP</a> Bayesian model; school and county geography come from public sources.</p>
-
-  <h5>Data</h5>
-  <p>All coverage data is published as static CSV files at predictable URLs, so the files that drive the dashboard double as a downloadable, no-auth API:</p>
-
-  <pre><code>/data/states.csv                               one row per state
-/data/states/&lt;state&gt;.csv                       one row per county
-/data/states/&lt;state&gt;/counties/&lt;county&gt;.csv     one row per school</code></pre>
-
-  <p>Each file carries the same coverage columns at every level: overall coverage with 95% credible intervals, a per-grade (K–5) breakdown, and a coverage tier.</p>
-
-  <p>The CSVs are generated from model output by the scripts in <code>scripts/build-data/</code> and regenerated when the model updates, not on every deploy. The full URL scheme and column reference, with <code>curl</code> examples, are in <a href="https://github.com/ACCIDDA/measles-dashboard/blob/main/docs/API.md" target="_blank" rel="noopener"><code>docs/API.md</code></a>.</p>
-
-  <h5>Tech</h5>
-  <p>Single-page <a href="https://vitejs.dev" target="_blank" rel="noopener">Vite</a> + <a href="https://react.dev" target="_blank" rel="noopener">React 18</a> app. Page chrome is React; the interactive map is <a href="https://d3js.org" target="_blank" rel="noopener">D3</a> over <a href="https://github.com/topojson/us-atlas" target="_blank" rel="noopener">us-atlas</a> TopoJSON. Deployed as a static site on GitHub Pages under the <code>/measles-dashboard/</code> base path.</p>
-
-  <p>How it all fits together is documented in <a href="https://github.com/ACCIDDA/measles-dashboard/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener"><code>docs/ARCHITECTURE.md</code></a>.</p>
-
-  <h5>Quick start</h5>
-  <p>Built and tested against <strong>Node 20</strong> (pinned in <a href="https://github.com/ACCIDDA/measles-dashboard/blob/main/.nvmrc" target="_blank" rel="noopener"><code>.nvmrc</code></a>; what CI runs). Run <code>nvm use</code> to match it.</p>
-
-  <pre><code>nvm use
-npm install
-npm run dev        # http://localhost:5173</code></pre>
-
-  <p>Full command list and the contributor workflow are in <a href="https://github.com/ACCIDDA/measles-dashboard/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener"><code>CONTRIBUTING.md</code></a>.</p>
-
-  <h5>Contributing</h5>
-  <p>See <a href="https://github.com/ACCIDDA/measles-dashboard/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener"><code>CONTRIBUTING.md</code></a>. In short: <code>nvm use</code> (Node 20), <code>npm install</code>, and the pre-commit hook runs lint + tests. Adding a new state needs data and a config entry, not code changes.</p>
-
-  <h2>III. Detailed Data Definitions</h2>
-  <ul>
-    <li>Format and use of each field within the application (state CSVs, schools.csv, schema.json)</li>
-    <li>Constraints on individual fields</li>
-    <li>Relationships between fields</li>
-  </ul>
-
-  <h2>IV. Design Rationale: Design Decisions</h2>
-  <ul>
-    <li>Decisions that affected the overall design of the system, including things chosen not to do</li>
-    <li>Dependencies the application has, and the reason for each</li>
-    <li>Any other information that will help the next developer</li>
   </ul>
 </main>
 
