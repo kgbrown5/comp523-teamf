@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Deliverables | Team F COMP 523</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">Team <span>F</span> &mdash; COMP 523</a>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="../team.html">Team &amp; Contact</a></li>
+        <li><a href="../schedule.html">Schedule</a></li>
+        <li><a href="../rules.html">Team Rules</a></li>
+        <li><a href="../journal.html">Journal</a></li>
+        <li><a href="../links.html">Related Links</a></li>
+        <li><a href="index.html" aria-current="page">Deliverables</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>D2: Design Document</h1>
+
+  <p>Current site: Single-page Vite + React 18 app. Page chrome is React; the interactive map is D3 over us-atlas TopoJSON. Deployed as a static site on GitHub Pages under the /measles-dashboard/ base path.</p>
+
+  <p>GitHub: <a href="https://github.com/ACCIDDA/measles-dashboard" target="_blank" rel="noopener">https://github.com/ACCIDDA/measles-dashboard</a></p>
+
+  <h2>I. Architecture</h2>
+
+  <!-- Insert final architecture diagram here -->
+   <img src="../measles_dashboard_architecture_v3.png" alt="Final architecture diagram of the measles dashboard" style="max-width: 100%; height: auto;">
+
+  <p>The dashboard is a static single-page app (Vite + React 18) with no backend. Its URL drives everything: App.jsx parses the route into a zoom level (national, state, county) and passes it, along with a small amount of UI state, to the page chrome and the map.</p>
+
+  <p>UnifiedMap.jsx is the one place React and D3 meet. React renders the SVG shell and D3 owns everything inside #map-g, using mutable refs so the setup effect runs once. Colors and thresholds come from src/config. useUnifiedMapData loads shared topology and manifests once, then lazy-loads each state's CSVs on demand and caches them. Geography comes from a CDN, and all other data comes from static files served alongside the app.</p>
+
+  <p>The data behind those files is produced in two stages, both outside the running app:</p>
+  <ul>
+    <li>R producers (build_state.R for states with an imuGAP fit, build_nc_from_estimates.R for NC's pre-predicted estimates) write a shared CSV schema, and the results are committed under public/data/.</li>
+    <li>On every build, an npm prebuild step generates download and API files from the committed schools.csv: per-county CSVs, all-schools.csv, schema.json (from the single-source src/data/schema.js) and the API docs page.</li>
+  </ul>
+
+  <h3>Notes</h3>
+  <ul>
+    <li>Committed vs generated: The app loads only the committed state CSVs and schools.csv. Everything prebuild generates is for downloads and the data API, not for the app. Generating it at build time avoids committing 150+ derived files on every data change.</li>
+    <li>Shared schema: Both R producers emit the same schema, which is why the loader treats every state identically. Adding a state is meant to be data plus config, not code.</li>
+    <li>Ownership split: React owns the chrome and D3 owns the map interior. DOM ids like #map-g and #tooltip are load-bearing because D3 and the e2e tests select by them.</li>
+    <li>Typed access for outside users: schema.json lets external consumers, for example R through Arrow, read the CSVs with guaranteed column types instead of inferring them.</li>
+  </ul>
+
+  <h3>Questions</h3>
+  <ul>
+    <li>The R scripts are run offline and are not part of prebuild. This differs from what issue #20 originally planned.</li>
+    <li>The architecture doc says the pipeline is "in flux" and will be updated after #20 lands. It seems like #20 is finished, so should the pipeline be updated as final?</li>
+    <li>The R script headers still describe per-county files as producer output, but the county files are now derived by Node. The diagram follows the Node script.</li>
+  </ul>
+
+  <h2>II. Code Repository</h2>
+  <p>ACCIDDA Measles Dashboard GitHub: <a href="https://github.com/ACCIDDA/measles-dashboard" target="_blank" rel="noopener">https://github.com/ACCIDDA/measles-dashboard</a></p>
+
+  <h3>README</h3>
+  <p>Include the README from the repo describing how to build the system from the archived files.</p>
+
+  <h3>High-level module structure</h3>
+  <ul>
+    <li>Programming languages used in the code</li>
+    <li>Which parts of the architecture diagram are written in which languages</li>
+    <li>Major modules in each component</li>
+    <li>Relationships among the modules (an annotated architecture diagram works well here)</li>
+  </ul>
+
+  <h2>III. Detailed Data Definitions</h2>
+  <ul>
+    <li>Format and use of each field within the application (state CSVs, schools.csv, schema.json)</li>
+    <li>Constraints on individual fields</li>
+    <li>Relationships between fields</li>
+  </ul>
+
+  <h2>IV. Design Rationale: Design Decisions</h2>
+  <ul>
+    <li>Decisions that affected the overall design of the system, including things chosen not to do</li>
+    <li>Dependencies the application has, and the reason for each</li>
+    <li>Any other information that will help the next developer</li>
+  </ul>
+</main>
+
+<footer class="site-footer">
+  <p>Team F &mdash; COMP 523, UNC-Chapel Hill</p>
+  <div class="copy-row">
+    <code id="footer-team-emails">kgbro@unc.edu, cgbryan@unc.edu, sadies@email.unc.edu, lkbriden@unc.edu</code>
+    <button type="button" class="copy-btn" data-copy-target="footer-team-emails" data-label="Copy">Copy</button>
+  </div>
+</footer>
+
+<script src="../script.js" defer></script></body>
+</html>
