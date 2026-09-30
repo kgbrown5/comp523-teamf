@@ -43,7 +43,7 @@
     <li>Generalize to measles-dashboard-StateCode API that other states can follow</li>
     <li>Accept data from measles-XX state repositories, given that no 404 error is received</li>
     <ul>
-        <li>404 error recieved → state will remain null/grey</li>
+        <li>404 error recieved → state will remain inactive</li>
         <li>No error → populate map with state’s data</li>
     </ul>
   </ul>
@@ -87,7 +87,51 @@
     <li>Collecting data from all states and imputed into the ACCIDDA dashboard</li>
   </ul>
   
-  
+  <h3>Interfaces</h3>
+  <h4>Current Flow</h4>
+  <ul>
+    <li>User enters the <a href="https://accidda.github.io/measles-dashboard/">main site</a> and sees a map of the US</li>
+    <ul>
+      <li>There is a search bar, download data button, API doc button, and static legend</li>
+      <li>Each state is inactive (grey), or active (blue, orange, or red) based on vaccination coverage</li>
+    </ul>
+    <li>The user can use the search bar to search for a specific state</li>
+    <li>On click the download button downloads the all-schools.csv file to the user's device</li>
+    <li>On click the API doc button routes the user to a static data API reference page</li>
+    <li>The legend is not clickable</li>
+    <li>When a user hovers over a state, information about that state is displayed</li>
+    <ul>
+      <li>Inactive state shows state name and "No data yet"</li>
+      <li>Active state shows state name, average vaccine coverage, classification (low, medium, high), and "Click to explore counties"</li>
+    </ul>
+    <li>When the user clicks on an active state, they are routed to a full state map view</li>
+    <li>Counties are displayed as active or inactive in the state view</li>
+    <ul>
+      <li>Hovering over an active county shows county name, average vaccine coverage, classification (low, medium, high), school count, and "Click to explore counties"</li>
+      <li>There is a button that toggles view between overall county vaccine coverage and percent of schools under 95% coverage</li>
+    </ul>
+    <li>Clicking on a country shows each school on the map, a list of schools, and a search bar to search for a specific school</li>
+    <ul>
+      <li>Hovering over a school shows its name and average coverage</li>
+      <li>Clicking on a school shows the K-5 vaccination breakdown</li>
+    </ul>
+    <li>Clicking on an ajoining map area routes to that map area if it is active, and back to the US overview if inactive</li>
+  </ul>
+  <h4>404 Fallback</h4>
+  <ul>
+    <li>Accept data from measles-XX state repositories</li>
+    <ul>
+        <li>404 error recieved → catch error → state marked inactive → rendered on map as grey</li>
+        <li>No error → state marked active → assign state tier and color → populate map with state’s data</li>
+    </ul>
+    <li>When a inactive state is clicked, use the existing toast "Data not yet available for [state]"</li>
+    <li>If inactive state accessed from URL, D3 map package handles the display</li>
+    <ul>
+      <li>Centers on grey selected state, back button shown</li>
+      <li>Next click routes back to US overview</li>
+    </ul>
+  </ul>
+
 </main>
 
 <footer class="site-footer">
