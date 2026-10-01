@@ -28,7 +28,14 @@
 </header>
 <main>
   <h1>Platform Selection</h1>
+  <p>We will be building off of the existing site. It is currently implemented as a single-page application using React and Vite.</p>
+  <p>The map is built using <a href="https://d3js.org/">D3</a>. D3 is an open-source data visualization library that allows developers to animate visualizations by connecting static data and DOM objects.</p>
+  <p>The state shapes come from <a href="https://github.com/topojson/us-atlas">us-atlas</a> TopoJSON, which provides shapefiles based on the Census Bureau's cartography data. State boundaries are determined by merging counties, and counties can be identified by their FIPS codes.</p>
+  <p>We will continue to host the site statically on GitHub Pages (as opposed to migrating it to Vercel or other platforms) because of the client's hosting preferences and contribution concerns.</p>
+
+  <p>Check out the repository <a href="https://github.com/ACCIDDA/measles-dashboard">here</a>, or our <a href="architecture.html">architecture analysis</a> for more details.</p>
 </main>
+
 <footer class="site-footer">
   <p>Team F &mdash; COMP 523, UNC-Chapel Hill</p>
   <div class="copy-row">
@@ -36,6 +43,7 @@
     <button type="button" class="copy-btn" data-copy-target="footer-team-emails" data-label="Copy">Copy</button>
   </div>
 </footer>
+
 <script src="../script.js" defer></script>
 </body>
 </html>
