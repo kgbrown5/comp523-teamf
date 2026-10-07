@@ -305,31 +305,6 @@ ul.link-list li {
   }
 }
 
-/* Deliverables navigation dropdown */
-.schedule-note {
-  color: var(--muted);
-}
-
-.schedule-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.schedule-table {
-  overflow-x: auto;
-  margin-bottom: 2rem;
-}
-
-.action-table {
-  min-width: 640px;
-}
-
-.action-table th:first-child { width: 21%; }
-.action-table th:nth-child(3) { width: 17%; }
-.action-table th:last-child { width: 12%; }
-
 .task-status {
   display: inline-block;
   padding: 0.15rem 0.55rem;
@@ -343,10 +318,6 @@ ul.link-list li {
 
 .status-done { background: #e5f3e8; color: #236136; }
 .status-waiting { background: #fff4da; color: #785000; }
-
-#current-actions, #completed-actions, #recurring-meetings {
-  scroll-margin-top: 8rem;
-}
 
 nav.main-nav li.nav-dropdown {
   position: relative;
@@ -374,4 +345,69 @@ nav.main-nav .dropdown-menu a {
   display: block;
   padding: 0.55rem 0.8rem;
   white-space: nowrap;
+}
+
+/* Date-led project timeline */
+.schedule-page { max-width: 1160px; }
+.schedule-heading { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin: 1rem 0 3rem; }
+.eyebrow { color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .14em; }
+.schedule-heading h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -.055em; line-height: 1.1; margin: .6rem 0 1rem; }
+.schedule-intro { color: var(--muted); margin: 0; }
+.updated-date { color: var(--muted); font-size: .8rem; white-space: nowrap; }
+.timeline { background: #f0f4f8; border: 1px solid var(--border); border-radius: 22px; padding: 1.5rem; }
+.timeline-toolbar { display: flex; justify-content: space-between; align-items: center; }
+.timeline-toolbar h2 { margin: 0; padding: 0; border: 0; font-size: 1.15rem; }
+.timeline-controls { display: flex; gap: .5rem; }
+.timeline-controls[hidden] { display: none; }
+.timeline-controls button { width: 42px; height: 42px; border: 1px solid #c5d2df; background: white; color: var(--navy); border-radius: 50%; font-size: 1.3rem; cursor: pointer; }
+.timeline-controls button:hover { background: var(--navy); color: white; }
+.timeline-controls button:disabled { opacity: .35; cursor: default; }
+.timeline-hint { font-size: .8rem; color: var(--muted); margin: .5rem 0 1.25rem; }
+.milestone-track { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #93aac0 transparent; padding: .4rem .2rem 1.2rem; }
+.milestone { position: relative; flex: 0 0 310px; height: 430px; scroll-snap-align: start; border: 1px solid #d8e1ea; border-radius: 16px; background: white; overflow: hidden; color: var(--navy); }
+.milestone-front { height: 100%; padding: 1.5rem; display: flex; flex-direction: column; }
+.milestone-top, .milestone-bottom { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+.milestone-month { font-size: .8rem; font-weight: 700; letter-spacing: .15em; }
+.milestone-date { font-size: 4.7rem; font-weight: 700; letter-spacing: -.075em; line-height: 1.2; padding: 1.7rem 0 1.2rem; }
+.milestone-kicker { font-size: .8rem; color: var(--muted); margin: 0 0 .4rem; }
+.milestone h3 { font-size: 1.7rem; letter-spacing: -.035em; line-height: 1.15; margin: 0; }
+.milestone-bottom { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); font-size: .75rem; }
+.milestone-featured { background: var(--navy); color: white; border-color: var(--navy); }
+.milestone-featured .milestone-kicker { color: #b6d4e9; }
+.milestone-featured .milestone-date { color: #82c5f2; }
+.milestone-details { position: absolute; inset: 0; background: white; color: var(--ink); padding: 1.3rem; overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .18s, transform .18s, visibility .18s; }
+.milestone:focus-within .milestone-details { opacity: 1; visibility: visible; transform: translateY(0); }
+@media (hover: hover) {
+  .milestone:hover .milestone-details { opacity: 1; visibility: visible; transform: translateY(0); }
+}
+.detail-heading { font-size: .75rem; font-weight: 700; color: var(--navy); margin: 0; padding-bottom: 1rem; border-bottom: 2px solid var(--carolina-blue); }
+.detail-heading span { font-weight: 400; }
+.milestone-details ul { list-style: none; margin: 0; padding: 0; }
+.milestone-details li { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.milestone-details li:last-child { border: 0; }
+.milestone-details li p { font-size: .87rem; line-height: 1.5; margin: 0 0 .7rem; }
+.task-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem; }
+.task-meta strong { font-size: .75rem; color: var(--navy); }
+.milestone-details small { display: block; font-size: .7rem; color: var(--muted); margin-top: .4rem; }
+.timeline-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .8rem; margin-top: 1rem; font-size: .68rem; letter-spacing: .08em; color: var(--muted); }
+.jump-current { font-size: .8rem; letter-spacing: 0; color: var(--navy); }
+.meeting-section { margin-top: 3rem; }
+.meeting-section h2 { border: 0; font-size: 1.3rem; }
+.meeting-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.meeting-grid article { border-top: 2px solid var(--carolina-blue); padding-top: .5rem; }
+.meeting-grid h3 { font-size: 1.6rem; color: var(--navy); margin: .5rem 0; letter-spacing: -.04em; }
+.meeting-grid h3 span { font-size: .8rem; letter-spacing: 0; }
+.meeting-grid p:not(.eyebrow) { margin: 0 0 .3rem; }
+.meeting-grid small, .schedule-footnote { font-size: .75rem; color: var(--muted); }
+.schedule-footnote { margin-top: 2rem; }
+.schedule-page :focus-visible { outline: 3px solid #2775ab; outline-offset: 3px; }
+@media (max-width: 600px) {
+  .schedule-heading { align-items: flex-start; flex-direction: column; margin-bottom: 2rem; }
+  .timeline { padding: 1rem; }
+  .milestone { flex-basis: min(290px, 82vw); }
+  .meeting-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .milestone-details { transition: none; }
 }

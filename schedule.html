@@ -29,106 +29,225 @@
   </div>
 </header>
 
-<main>
-  <h1>Todo &amp; Schedule</h1>
-  <p>Team action items, upcoming milestones, and recurring meetings.</p>
-  <p class="schedule-note">Updated <time datetime="2026-10-07">October 7, 2026</time>. Past scheduled items are marked done and retained below. Undated work remains open; TBD means a deadline has not been set. All times are Eastern.</p>
-  <nav class="schedule-links" aria-label="Schedule sections">
-    <a href="#current-actions">Current action items</a>
-    <a href="#completed-actions">Completed action items</a>
-    <a href="#recurring-meetings">Recurring meetings</a>
-  </nav>
-
-  <section aria-labelledby="current-actions">
-  <h2 id="current-actions">Current Action Items</h2>
-  <div class="schedule-table" role="region" aria-label="Current action items" tabindex="0">
-  <table class="action-table">
-    <thead><tr><th scope="col">Timing</th><th scope="col">Action item</th><th scope="col">Owner</th><th scope="col">Status</th></tr></thead>
-    <tbody>
-      <tr><td>Oct 5–12, 2026</td><td>Demo the dashboard with North Carolina data.</td><td>Team F</td><td><span class="task-status status-to-do">To do</span></td></tr>
-      <tr><td>Next · date TBD</td><td>Fork the existing dashboard and build the generic measles-dashboard-AA outline, setup scripts, and helper actions. Keep GitHub Pages static hosting.</td><td>Luke Briden</td><td><span class="task-status status-to-do">To do</span></td></tr>
-      <tr><td>After generic outline</td><td>Extract North Carolina data and plug it into the generic implementation to validate the structure and decentralized data loading.</td><td>Sadie Sawyer</td><td><span class="task-status status-to-do">To do</span></td></tr>
-      <tr><td>After NC validation</td><td>Create measles-dashboard-NC and measles-dashboard-CA using the verified template.</td><td>Caroline Bryan</td><td><span class="task-status status-to-do">To do</span></td></tr>
-      <tr><td>After state validation</td><td>Open a pull request from the fork to introduce the North Carolina changes into the main dashboard repository.</td><td>Luke Briden</td><td><span class="task-status status-to-do">To do</span></td></tr>
-      <tr><td>Next · date TBD</td><td>Write gettingstarted.md and agents.md covering the code structure, setup, and guidance for data suppliers; request feedback.</td><td>Katie Brown</td><td><span class="task-status status-to-do">To do</span></td></tr>
-      <tr><td>Next · date TBD</td><td>Revise architecture documentation to distinguish data suppliers from dashboard users, explicitly show static GitHub Pages hosting, and clarify expansion to all states. Consider separate diagrams for the two user flows.</td><td>Caroline Bryan</td><td><span class="task-status status-to-do">To do</span></td></tr>
-      <tr><td>Awaiting confirmation</td><td>Define dashboard behavior when a registered state data endpoint returns a 404.</td><td>Luke Briden</td><td><span class="task-status status-waiting">Waiting</span></td></tr>
-      <tr><td>Awaiting specifications</td><td>Obtain data-cleaning specifications for tidyschoolvax and confirm validation requirements with the package maintainers.</td><td>Sadie Sawyer</td><td><span class="task-status status-waiting">Waiting</span></td></tr>
-      <tr><td>Next · date TBD</td><td>Document deterministic validation checks and reference expectations for human review. Add standing context for optional AI troubleshooting of validation results.</td><td>Katie Brown</td><td><span class="task-status status-to-do">To do</span></td></tr>
-      <tr><td>After template validation and specifications</td><td>Integrate the template with the cleaning scripts and transform validated estimation results into dashboard-compatible data.</td><td>Sadie Sawyer</td><td><span class="task-status status-to-do">To do</span></td></tr>
-      <tr><td>ASAP · date TBD</td><td>Start the ethics assignment.</td><td>Team F</td><td><span class="task-status status-to-do">To do</span></td></tr>
-      <tr><td>Ongoing</td><td>Send a focused agenda before each weekly check-in and share progress, blockers, and deliverable artifacts.</td><td>Katie Brown</td><td><span class="task-status status-ongoing">Ongoing</span></td></tr>
-      <tr><td>Ongoing</td><td>Maintain team roles, the progress journal, and assigned website action items.</td><td>Luke Briden</td><td><span class="task-status status-ongoing">Ongoing</span></td></tr>
-      <tr><td>End of semester · date TBD</td><td>Complete the final design document explaining the repository and implementation.</td><td>Team F</td><td><span class="task-status status-to-do">To do</span></td></tr>
-      <tr><td>End of semester · date TBD</td><td>Present the completed project to the epidemiology center.</td><td>Team F</td><td><span class="task-status status-to-do">To do</span></td></tr>
-    </tbody>
-  </table>
+<main class="schedule-page">
+  <div class="schedule-heading">
+    <div><p class="eyebrow">TEAM F / FALL 2026</p><h1>What’s next.</h1>
+    <p class="schedule-intro">A timeline of the work. From first steps to final demo.</p></div>
+    <span class="updated-date">Updated Oct 7</span>
   </div>
+  <section class="timeline" aria-labelledby="timeline-title" aria-roledescription="carousel">
+    <div class="timeline-toolbar">
+      <h2 id="timeline-title">Action items</h2>
+      <div class="timeline-controls" hidden>
+        <button type="button" data-direction="-1" aria-label="Previous milestone" aria-controls="milestone-track">&#8592;</button>
+        <button type="button" data-direction="1" aria-label="Next milestone" aria-controls="milestone-track">&#8594;</button>
+      </div>
+    </div>
+    <p class="timeline-hint">Scroll to explore. Hover, focus, or tap a card for the details.</p>
+    <div class="milestone-track" id="milestone-track" tabindex="0" aria-label="Project milestones">
+      <article class="milestone " tabindex="0" aria-labelledby="milestone-0" >
+        <div class="milestone-front">
+          <div class="milestone-top"><span class="milestone-month">SEP</span><span class="task-status status-done">Done</span></div>
+          <div class="milestone-date">2026</div>
+          <p class="milestone-kicker">Project setup</p>
+          <h3 id="milestone-0">Laying the groundwork</h3>
+          <div class="milestone-bottom"><span>9 action items</span><span aria-hidden="true">Explore ↗</span></div>
+        </div>
+        <div class="milestone-details" tabindex="0" role="region" aria-label="Milestone action details">
+          <p class="detail-heading">SEP 2026 <span> / Laying the groundwork</span></p>
+          <ul>
+            <li><p>Record the hosting cost concern and GitHub Pages hosting choice in the specification.</p><div class="task-meta"><strong>Luke Briden</strong><span class="task-status status-done">Done</span></div><small>September 2026</small></li>
+            <li><p>Add team roles and update the website journal with session progress.</p><div class="task-meta"><strong>Caroline Bryan</strong><span class="task-status status-done">Done</span></div><small>September 2026</small></li>
+            <li><p>Refine and upload the deliverables document.</p><div class="task-meta"><strong>Sadie Sawyer</strong><span class="task-status status-done">Done</span></div><small>September 2026</small></li>
+            <li><p>Publish the initial project and follow-up meeting summaries on the team website.</p><div class="task-meta"><strong>Luke Briden</strong><span class="task-status status-done">Done</span></div><small>September 2026</small></li>
+            <li><p>Document project management standards and agree on the initial project specifications.</p><div class="task-meta"><strong>Team F</strong><span class="task-status status-done">Done</span></div><small>September 2026</small></li>
+            <li><p>Translate requirements into GitHub issues with high-level tasks and subtasks.</p><div class="task-meta"><strong>Caroline Bryan</strong><span class="task-status status-done">Done</span></div><small>September 2026</small></li>
+            <li><p>Choose the project direction and confirm work within the existing repository.</p><div class="task-meta"><strong>Team F</strong><span class="task-status status-done">Done</span></div><small>September 2026</small></li>
+            <li><p>Propose times and establish the weekly 30-minute check-in.</p><div class="task-meta"><strong>Katie Brown</strong><span class="task-status status-done">Done</span></div><small>September 2026</small></li>
+            <li><p>Share team GitHub handles and the team website link for onboarding.</p><div class="task-meta"><strong>Sadie Sawyer</strong><span class="task-status status-done">Done</span></div><small>September 2026</small></li>
+          </ul>
+        </div>
+      </article>
+      <article class="milestone " tabindex="0" aria-labelledby="milestone-1" >
+        <div class="milestone-front">
+          <div class="milestone-top"><span class="milestone-month">SEP</span><span class="task-status status-done">Done</span></div>
+          <div class="milestone-date">28</div>
+          <p class="milestone-kicker">First deliverables</p>
+          <h3 id="milestone-1">Specs &amp; responsibilities</h3>
+          <div class="milestone-bottom"><span>2 action items</span><span aria-hidden="true">Explore ↗</span></div>
+        </div>
+        <div class="milestone-details" tabindex="0" role="region" aria-label="Milestone action details">
+          <p class="detail-heading">SEP 28 <span> / Specs &amp; responsibilities</span></p>
+          <ul>
+            <li><p>Finalize the D1 specifications, share the updated document, and publish it on the team website.</p><div class="task-meta"><strong>Katie Brown</strong><span class="task-status status-done">Done</span></div><small>Sept 28, 2026</small></li>
+            <li><p>Divide and assign the midterm presentation deliverables.</p><div class="task-meta"><strong>Team F</strong><span class="task-status status-done">Done</span></div><small>Sept 28, 2026</small></li>
+          </ul>
+        </div>
+      </article>
+      <article class="milestone " tabindex="0" aria-labelledby="milestone-2" >
+        <div class="milestone-front">
+          <div class="milestone-top"><span class="milestone-month">SEP</span><span class="task-status status-done">Done</span></div>
+          <div class="milestone-date">30</div>
+          <p class="milestone-kicker">Interface documentation</p>
+          <h3 id="milestone-2">Map interactions</h3>
+          <div class="milestone-bottom"><span>1 action item</span><span aria-hidden="true">Explore ↗</span></div>
+        </div>
+        <div class="milestone-details" tabindex="0" role="region" aria-label="Milestone action details">
+          <p class="detail-heading">SEP 30 <span> / Map interactions</span></p>
+          <ul>
+            <li><p>Document the existing map click workflow in the interfaces specification.</p><div class="task-meta"><strong>Katie Brown</strong><span class="task-status status-done">Done</span></div><small>Sept 30, 2026 · 5 PM</small></li>
+          </ul>
+        </div>
+      </article>
+      <article class="milestone " tabindex="0" aria-labelledby="milestone-3" >
+        <div class="milestone-front">
+          <div class="milestone-top"><span class="milestone-month">OCT</span><span class="task-status status-done">Done</span></div>
+          <div class="milestone-date">02</div>
+          <p class="milestone-kicker">Architecture &amp; talk prep</p>
+          <h3 id="milestone-3">Design takes shape</h3>
+          <div class="milestone-bottom"><span>3 action items</span><span aria-hidden="true">Explore ↗</span></div>
+        </div>
+        <div class="milestone-details" tabindex="0" role="region" aria-label="Milestone action details">
+          <p class="detail-heading">OCT 02 <span> / Design takes shape</span></p>
+          <ul>
+            <li><p>Finish, review, and upload the XP-style system metaphor; include it in the midterm talk.</p><div class="task-meta"><strong>Sadie Sawyer</strong><span class="task-status status-done">Done</span></div><small>Oct 2, 2026</small></li>
+            <li><p>Finish and upload the architecture diagram; include it in the midterm talk.</p><div class="task-meta"><strong>Caroline Bryan</strong><span class="task-status status-done">Done</span></div><small>Oct 2, 2026</small></li>
+            <li><p>Select and email the tech talk topic.</p><div class="task-meta"><strong>Katie Brown</strong><span class="task-status status-done">Done</span></div><small>Oct 2, 2026 · 5 PM</small></li>
+          </ul>
+        </div>
+      </article>
+      <article class="milestone " tabindex="0" aria-labelledby="milestone-4" >
+        <div class="milestone-front">
+          <div class="milestone-top"><span class="milestone-month">OCT</span><span class="task-status status-done">Done</span></div>
+          <div class="milestone-date">05</div>
+          <p class="milestone-kicker">The project, explained</p>
+          <h3 id="milestone-4">Midterm presentation</h3>
+          <div class="milestone-bottom"><span>5 action items</span><span aria-hidden="true">Explore ↗</span></div>
+        </div>
+        <div class="milestone-details" tabindex="0" role="region" aria-label="Milestone action details">
+          <p class="detail-heading">OCT 05 <span> / Midterm presentation</span></p>
+          <ul>
+            <li><p>Prepare and deliver the midterm presentation.</p><div class="task-meta"><strong>Team F</strong><span class="task-status status-done">Done</span></div><small>Oct 5, 2026</small></li>
+            <li><p>Prepare the functional overview describing users, needs, and system capabilities.</p><div class="task-meta"><strong>Sadie Sawyer</strong><span class="task-status status-done">Done</span></div><small>Oct 5, 2026</small></li>
+            <li><p>Prepare UI mockups, the current interface overview, and expansion to additional states.</p><div class="task-meta"><strong>Katie Brown</strong><span class="task-status status-done">Done</span></div><small>Oct 5, 2026</small></li>
+            <li><p>Prepare the technical overview explaining the architecture and single data entry point.</p><div class="task-meta"><strong>Luke Briden</strong><span class="task-status status-done">Done</span></div><small>Oct 5, 2026</small></li>
+            <li><p>Prepare the platform description with the final language, tools, libraries, and hosting choices.</p><div class="task-meta"><strong>Katie Brown</strong><span class="task-status status-done">Done</span></div><small>Oct 5, 2026</small></li>
+          </ul>
+        </div>
+      </article>
+      <article class="milestone milestone-featured" tabindex="0" aria-labelledby="milestone-5" id="demo-week">
+        <div class="milestone-front">
+          <div class="milestone-top"><span class="milestone-month">OCT</span><span class="task-status status-to-do">To do</span></div>
+          <div class="milestone-date">5–12</div>
+          <p class="milestone-kicker">North Carolina in action</p>
+          <h3 id="milestone-5">Demo week</h3>
+          <div class="milestone-bottom"><span>1 action item</span><span aria-hidden="true">Explore ↗</span></div>
+        </div>
+        <div class="milestone-details" tabindex="0" role="region" aria-label="Milestone action details">
+          <p class="detail-heading">OCT 5–12 <span> / Demo week</span></p>
+          <ul>
+            <li><p>Demo the dashboard with North Carolina data.</p><div class="task-meta"><strong>Team F</strong><span class="task-status status-to-do">To do</span></div><small>Oct 5–12, 2026</small></li>
+          </ul>
+        </div>
+      </article>
+      <article class="milestone " tabindex="0" aria-labelledby="milestone-6" >
+        <div class="milestone-front">
+          <div class="milestone-top"><span class="milestone-month">NEXT</span><span class="task-status status-to-do">To do</span></div>
+          <div class="milestone-date">TBD</div>
+          <p class="milestone-kicker">Template &amp; contributor guides</p>
+          <h3 id="milestone-6">Build the foundation</h3>
+          <div class="milestone-bottom"><span>4 action items</span><span aria-hidden="true">Explore ↗</span></div>
+        </div>
+        <div class="milestone-details" tabindex="0" role="region" aria-label="Milestone action details">
+          <p class="detail-heading">NEXT TBD <span> / Build the foundation</span></p>
+          <ul>
+            <li><p>Fork the existing dashboard and build the generic measles-dashboard-AA outline, setup scripts, and helper actions. Keep GitHub Pages static hosting.</p><div class="task-meta"><strong>Luke Briden</strong><span class="task-status status-to-do">To do</span></div><small>Next · date TBD</small></li>
+            <li><p>Write gettingstarted.md and agents.md covering the code structure, setup, and guidance for data suppliers; request feedback.</p><div class="task-meta"><strong>Katie Brown</strong><span class="task-status status-to-do">To do</span></div><small>Next · date TBD</small></li>
+            <li><p>Revise architecture documentation to distinguish data suppliers from dashboard users, explicitly show static GitHub Pages hosting, and clarify expansion to all states. Consider separate diagrams for the two user flows.</p><div class="task-meta"><strong>Caroline Bryan</strong><span class="task-status status-to-do">To do</span></div><small>Next · date TBD</small></li>
+            <li><p>Document deterministic validation checks and reference expectations for human review. Add standing context for optional AI troubleshooting of validation results.</p><div class="task-meta"><strong>Katie Brown</strong><span class="task-status status-to-do">To do</span></div><small>Next · date TBD</small></li>
+          </ul>
+        </div>
+      </article>
+      <article class="milestone " tabindex="0" aria-labelledby="milestone-7" >
+        <div class="milestone-front">
+          <div class="milestone-top"><span class="milestone-month">THEN</span><span class="task-status status-to-do">To do</span></div>
+          <div class="milestone-date">TBD</div>
+          <p class="milestone-kicker">Validate, extend, integrate</p>
+          <h3 id="milestone-7">Connect the states</h3>
+          <div class="milestone-bottom"><span>4 action items</span><span aria-hidden="true">Explore ↗</span></div>
+        </div>
+        <div class="milestone-details" tabindex="0" role="region" aria-label="Milestone action details">
+          <p class="detail-heading">THEN TBD <span> / Connect the states</span></p>
+          <ul>
+            <li><p>Extract North Carolina data and plug it into the generic implementation to validate the structure and decentralized data loading.</p><div class="task-meta"><strong>Sadie Sawyer</strong><span class="task-status status-to-do">To do</span></div><small>After generic outline</small></li>
+            <li><p>Create measles-dashboard-NC and measles-dashboard-CA using the verified template.</p><div class="task-meta"><strong>Caroline Bryan</strong><span class="task-status status-to-do">To do</span></div><small>After NC validation</small></li>
+            <li><p>Open a pull request from the fork to introduce the North Carolina changes into the main dashboard repository.</p><div class="task-meta"><strong>Luke Briden</strong><span class="task-status status-to-do">To do</span></div><small>After state validation</small></li>
+            <li><p>Integrate the template with the cleaning scripts and transform validated estimation results into dashboard-compatible data.</p><div class="task-meta"><strong>Sadie Sawyer</strong><span class="task-status status-to-do">To do</span></div><small>After template validation and specifications</small></li>
+          </ul>
+        </div>
+      </article>
+      <article class="milestone " tabindex="0" aria-labelledby="milestone-8" >
+        <div class="milestone-front">
+          <div class="milestone-top"><span class="milestone-month">PENDING</span><span class="task-status status-waiting">Waiting</span></div>
+          <div class="milestone-date">TBD</div>
+          <p class="milestone-kicker">Decisions &amp; dependencies</p>
+          <h3 id="milestone-8">Unblock the details</h3>
+          <div class="milestone-bottom"><span>2 action items</span><span aria-hidden="true">Explore ↗</span></div>
+        </div>
+        <div class="milestone-details" tabindex="0" role="region" aria-label="Milestone action details">
+          <p class="detail-heading">PENDING TBD <span> / Unblock the details</span></p>
+          <ul>
+            <li><p>Define dashboard behavior when a registered state data endpoint returns a 404.</p><div class="task-meta"><strong>Luke Briden</strong><span class="task-status status-waiting">Waiting</span></div><small>Awaiting confirmation</small></li>
+            <li><p>Obtain data-cleaning specifications for tidyschoolvax and confirm validation requirements with the package maintainers.</p><div class="task-meta"><strong>Sadie Sawyer</strong><span class="task-status status-waiting">Waiting</span></div><small>Awaiting specifications</small></li>
+          </ul>
+        </div>
+      </article>
+      <article class="milestone " tabindex="0" aria-labelledby="milestone-9" >
+        <div class="milestone-front">
+          <div class="milestone-top"><span class="milestone-month">ONGOING</span><span class="task-status status-ongoing">Ongoing</span></div>
+          <div class="milestone-date">2026</div>
+          <p class="milestone-kicker">Team rhythm &amp; ethics</p>
+          <h3 id="milestone-9">Keep things moving</h3>
+          <div class="milestone-bottom"><span>3 action items</span><span aria-hidden="true">Explore ↗</span></div>
+        </div>
+        <div class="milestone-details" tabindex="0" role="region" aria-label="Milestone action details">
+          <p class="detail-heading">ONGOING 2026 <span> / Keep things moving</span></p>
+          <ul>
+            <li><p>Start the ethics assignment.</p><div class="task-meta"><strong>Team F</strong><span class="task-status status-to-do">To do</span></div><small>ASAP · date TBD</small></li>
+            <li><p>Send a focused agenda before each weekly check-in and share progress, blockers, and deliverable artifacts.</p><div class="task-meta"><strong>Katie Brown</strong><span class="task-status status-ongoing">Ongoing</span></div><small>Ongoing</small></li>
+            <li><p>Maintain team roles, the progress journal, and assigned website action items.</p><div class="task-meta"><strong>Luke Briden</strong><span class="task-status status-ongoing">Ongoing</span></div><small>Ongoing</small></li>
+          </ul>
+        </div>
+      </article>
+      <article class="milestone " tabindex="0" aria-labelledby="milestone-10" >
+        <div class="milestone-front">
+          <div class="milestone-top"><span class="milestone-month">FINALE</span><span class="task-status status-to-do">To do</span></div>
+          <div class="milestone-date">TBD</div>
+          <p class="milestone-kicker">End-of-semester deliverables</p>
+          <h3 id="milestone-10">Bring it together</h3>
+          <div class="milestone-bottom"><span>2 action items</span><span aria-hidden="true">Explore ↗</span></div>
+        </div>
+        <div class="milestone-details" tabindex="0" role="region" aria-label="Milestone action details">
+          <p class="detail-heading">FINALE TBD <span> / Bring it together</span></p>
+          <ul>
+            <li><p>Complete the final design document explaining the repository and implementation.</p><div class="task-meta"><strong>Team F</strong><span class="task-status status-to-do">To do</span></div><small>End of semester · date TBD</small></li>
+            <li><p>Present the completed project to the epidemiology center.</p><div class="task-meta"><strong>Team F</strong><span class="task-status status-to-do">To do</span></div><small>End of semester · date TBD</small></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <div class="timeline-footer"><span>SEPTEMBER → SEMESTER END</span><a href="#demo-week" class="jump-current">Jump to demo week ↗</a></div>
   </section>
 
-  <section aria-labelledby="completed-actions">
-  <h2 id="completed-actions">Completed Action Items</h2>
-  <div class="schedule-table" role="region" aria-label="Completed action items" tabindex="0">
-  <table class="action-table">
-    <thead><tr><th scope="col">Timing</th><th scope="col">Action item</th><th scope="col">Owner</th><th scope="col">Status</th></tr></thead>
-    <tbody>
-      <tr><td>Oct 5, 2026</td><td>Prepare and deliver the midterm presentation.</td><td>Team F</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>Oct 5, 2026</td><td>Prepare the functional overview describing users, needs, and system capabilities.</td><td>Sadie Sawyer</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>Oct 5, 2026</td><td>Prepare UI mockups, the current interface overview, and expansion to additional states.</td><td>Katie Brown</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>Oct 5, 2026</td><td>Prepare the technical overview explaining the architecture and single data entry point.</td><td>Luke Briden</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>Oct 5, 2026</td><td>Prepare the platform description with the final language, tools, libraries, and hosting choices.</td><td>Katie Brown</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>Oct 2, 2026</td><td>Finish, review, and upload the XP-style system metaphor; include it in the midterm talk.</td><td>Sadie Sawyer</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>Oct 2, 2026</td><td>Finish and upload the architecture diagram; include it in the midterm talk.</td><td>Caroline Bryan</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>Oct 2, 2026 · 5 PM</td><td>Select and email the tech talk topic.</td><td>Katie Brown</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>Sept 30, 2026 · 5 PM</td><td>Document the existing map click workflow in the interfaces specification.</td><td>Katie Brown</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>September 2026</td><td>Record the hosting cost concern and GitHub Pages hosting choice in the specification.</td><td>Luke Briden</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>Sept 28, 2026</td><td>Finalize the D1 specifications, share the updated document, and publish it on the team website.</td><td>Katie Brown</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>Sept 28, 2026</td><td>Divide and assign the midterm presentation deliverables.</td><td>Team F</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>September 2026</td><td>Add team roles and update the website journal with session progress.</td><td>Caroline Bryan</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>September 2026</td><td>Refine and upload the deliverables document.</td><td>Sadie Sawyer</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>September 2026</td><td>Publish the initial project and follow-up meeting summaries on the team website.</td><td>Luke Briden</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>September 2026</td><td>Document project management standards and agree on the initial project specifications.</td><td>Team F</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>September 2026</td><td>Translate requirements into GitHub issues with high-level tasks and subtasks.</td><td>Caroline Bryan</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>September 2026</td><td>Choose the project direction and confirm work within the existing repository.</td><td>Team F</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>September 2026</td><td>Propose times and establish the weekly 30-minute check-in.</td><td>Katie Brown</td><td><span class="task-status status-done">Done</span></td></tr>
-      <tr><td>September 2026</td><td>Share team GitHub handles and the team website link for onboarding.</td><td>Sadie Sawyer</td><td><span class="task-status status-done">Done</span></td></tr>
-    </tbody>
-  </table>
-  </div>
+  <section class="meeting-section" aria-labelledby="recurring-meetings">
+    <h2 id="recurring-meetings">On the calendar</h2>
+    <div class="meeting-grid">
+      <article><p class="eyebrow">MONDAY</p><h3>10:30 <span>AM</span></h3><p>Client check-in</p><small>Microsoft Teams · Team F &amp; Dr. Carl Pearson</small></article>
+      <article><p class="eyebrow">WEDNESDAY</p><h3>10:30 <span>AM</span></h3><p>Coach check-in</p><small>Zoom · Team F &amp; Vinir Rai</small></article>
+      <article><p class="eyebrow">AS NEEDED</p><h3>After lecture</h3><p>Team sync</p><small>Sitterson · Team F</small></article>
+    </div>
+    <p class="schedule-footnote">All times Eastern. Dates marked TBD are not yet scheduled. Past scheduled work is retained as done.</p>
   </section>
-
-  <h2 id="recurring-meetings">Recurring Meetings</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Meeting</th>
-        <th>Day / Time</th>
-        <th>Location</th>
-        <th>Attendees</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Team Meeting</td>
-        <td>After lecture, as necessary</td>
-        <td>Sitterson</td>
-        <td>Team Foxtrot</td>
-      </tr>
-      <tr>
-        <td>Client Meeting</td>
-        <td>Monday, 10:30 AM</td>
-        <td>Microsoft Teams</td>
-        <td>Team Foxtrot, Dr. Carl Pearson</td>
-      </tr>
-      <tr>
-        <td>Coach Meeting</td>
-        <td>Wednesday, 10:30 AM</td>
-        <td>Zoom</td>
-        <td>Team Foxtrot, Vinir Rai (Coach)</td>
-      </tr>
-    </tbody>
-  </table>
-
 </main>
 
 <footer class="site-footer">
