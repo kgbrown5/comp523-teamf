@@ -13,7 +13,7 @@ npx serve .
 
 - `index.html` — Project intro
 - `team.html` — Team roles, contact info, client info
-- `schedule.html` — Recurring meeting schedule
+- `schedule.html` — Assigned action items, completed work, and recurring meeting schedule
 - `rules.html` — Team rules
 - `journal.html` — Meeting journal (reverse chronological)
 - `deliverables`
