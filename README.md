@@ -1,7 +1,7 @@
 # comp523-teamf
 Project Website for COMP523 Team F
 
-Static HTML/CSS site made with Claude Code, deployed using Vercel.
+Static HTML/CSS site, deployed using Vercel.
 
 ## Local preview
 
