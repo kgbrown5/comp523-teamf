@@ -42,49 +42,53 @@ function fallbackCopy(text, onDone) {
   onDone();
 }
 
-// Keep the timeline usable as a native horizontal scroller without JavaScript.
-var milestoneTrack = document.getElementById("milestone-track");
-if (milestoneTrack) {
-  var timelineControls = document.querySelector(".timeline-controls");
-  var previousMilestone = timelineControls.querySelector('[data-direction="-1"]');
-  var nextMilestone = timelineControls.querySelector('[data-direction="1"]');
-  timelineControls.hidden = false;
+// Refresh the static fallback from the journal, which is the source of action items.
+var actionScroll = document.getElementById("action-scroll");
+if (actionScroll && window.location.protocol !== "file:") {
+  fetch("journal.html", { cache: "no-cache" })
+    .then(function (response) {
+      if (!response.ok) throw new Error("Journal unavailable");
+      return response.text();
+    })
+    .then(function (html) {
+      var journal = new DOMParser().parseFromString(html, "text/html");
+      var meetings = document.createDocumentFragment();
+      var itemCount = 0;
 
-  function updateTimelineControls() {
-    previousMilestone.disabled = milestoneTrack.scrollLeft < 2;
-    nextMilestone.disabled = milestoneTrack.scrollLeft + milestoneTrack.clientWidth >= milestoneTrack.scrollWidth - 2;
-  }
+      // The journal is maintained in reverse chronological order.
+      journal.querySelectorAll(".journal-entry").forEach(function (entry) {
+        var actions = entry.querySelector(".journal-actions");
+        var meta = entry.querySelector(".meta");
+        if (!actions || !actions.children.length || !meta) return;
 
-  timelineControls.addEventListener("click", function (event) {
-    var button = event.target.closest("button");
-    if (!button) return;
-    var cards = Array.from(milestoneTrack.children);
-    var current = cards.reduce(function (best, card, index) {
-      return Math.abs(card.offsetLeft - cards[0].offsetLeft - milestoneTrack.scrollLeft) <
-        Math.abs(cards[best].offsetLeft - cards[0].offsetLeft - milestoneTrack.scrollLeft) ? index : best;
-    }, 0);
-    var next = Math.max(0, Math.min(cards.length - 1, current + Number(button.dataset.direction)));
-    milestoneTrack.scrollTo({
-      left: cards[next].offsetLeft - cards[0].offsetLeft,
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+        var meeting = document.createElement("article");
+        meeting.className = "action-meeting";
+        var heading = document.createElement("h3");
+        var source = document.createElement("a");
+        source.href = "journal.html" + (entry.id ? "#" + entry.id : "");
+        source.textContent = meta.textContent.replace(/\s+/g, " ").trim().replace("Meeting Type: ", "");
+        heading.appendChild(source);
+        meeting.appendChild(heading);
+
+        var list = document.importNode(actions, true);
+        list.className = "action-list";
+        itemCount += list.children.length;
+        meeting.appendChild(list);
+        meetings.appendChild(meeting);
+      });
+
+      if (!itemCount) {
+        var empty = document.createElement("p");
+        empty.className = "action-note";
+        empty.textContent = "No action items have been recorded in the meeting journal yet.";
+        meetings.appendChild(empty);
+      }
+      actionScroll.replaceChildren(meetings);
+      document.getElementById("action-count").textContent = itemCount + (itemCount === 1 ? " item" : " items");
+    })
+    .catch(function () {
+      var status = document.getElementById("action-load-status");
+      status.textContent = "Showing saved items. Open the meeting journal for the latest notes.";
+      status.hidden = false;
     });
-  });
-
-  // Tapping anywhere on a card reveals its details on touch screens too.
-  milestoneTrack.addEventListener("click", function (event) {
-    var card = event.target.closest(".milestone");
-    if (card) card.focus({ preventScroll: true });
-  });
-  milestoneTrack.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && event.target.closest(".milestone")) {
-      milestoneTrack.focus({ preventScroll: true });
-    }
-  });
-  milestoneTrack.addEventListener("scroll", updateTimelineControls, { passive: true });
-  window.addEventListener("resize", updateTimelineControls);
-  var demoWeek = document.getElementById("demo-week");
-  if (!window.location.hash && demoWeek) {
-    milestoneTrack.scrollLeft = demoWeek.offsetLeft - milestoneTrack.firstElementChild.offsetLeft;
-  }
-  updateTimelineControls();
 }
