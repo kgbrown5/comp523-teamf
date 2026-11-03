@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Documentation/User Manual Plan | Team F COMP 523</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">Team <span>F</span> &mdash; COMP 523</a>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="../team.html">Team</a></li>
+        <li><a href="../schedule.html">Todo &amp; Schedule</a></li>
+        <li><a href="../journal.html">Journal</a></li>
+        <li class="nav-dropdown"><a href="../deliverables.html" aria-haspopup="true">Deliverables</a><ul class="dropdown-menu">
+          <li><a href="rules.html">Team Rules</a></li>
+          <li><a href="specifications.html">Specifications</a></li>
+          <li><a href="platform-selection.html">Platform Selection</a></li>
+          <li><a href="architecture.html">Architecture Analysis</a></li>
+          <li><a href="systems-metaphor.html">Systems Metaphor</a></li>
+          <li><a href="https://docs.google.com/presentation/d/1eMHFSh3-HdcFHqu0aMNRiPqwZpAM95kY/edit?slide=id.p8#slide=id.p8">Midterm Presentation</a></li>
+          <li><a href="demo-10-18.html">Demo 10/18</a></li>
+          <li><a href="ethics-assignment.html">Ethics Assignment</a></li>
+          <li><a href="test-plan.html">Test Plan</a></li>
+          <li><a href="documentation-plan.html" aria-current="page">Documentation/User Manual Plan</a></li>
+        </ul></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="markdown-content">
+  <h1>Team F &mdash; Documentation Plan</h1>
+  <p><strong>COMP 523 | ACCIDDA Measles Vaccination Coverage Dashboard</strong></p>
+  <p><strong>Status:</strong> Under Review</p>
+
+  <h2>1. Overview</h2>
+  <p>Our team is extending ACCIDDA's Measles Vaccination Coverage Dashboard to support standardized state-specific data repositories. Our documentation will focus on helping users navigate the dashboard, contributors add new state data, and administrators maintain the application.</p>
+  <p>We plan to keep documentation concise and accessible, prioritizing workflows that are not immediately obvious from the interface.</p>
+
+  <h2>2. User Audiences</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Audience</th>
+        <th>Technical Skill Level</th>
+        <th>Documentation Needs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Public dashboard users</td>
+        <td>Basic</td>
+        <td>Understanding visualizations, interpreting missing data, and navigating the dashboard</td>
+      </tr>
+      <tr>
+        <td>State-data contributors</td>
+        <td>Intermediate</td>
+        <td>Preparing CSV files, validating data, and submitting state repositories</td>
+      </tr>
+      <tr>
+        <td>Dashboard administrators</td>
+        <td>Intermediate&ndash;advanced</td>
+        <td>Reviewing state registrations, deploying updates, and troubleshooting</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Public Dashboard Documentation</h2>
+  <p>Because the dashboard is designed to be intuitive, we do not anticipate needing an extensive user manual. Instead, we will provide brief explanations for features that may be confusing, including vaccination coverage classifications, missing data, and county-level visualization options.</p>
+  <p>We will make this information accessible through concise help text or a short guide linked from the dashboard. Users will also be directed to existing data references when more detailed information is needed.</p>
+
+  <h2>4. State Contributor Documentation</h2>
+  <p>Our most detailed documentation will focus on adding new state data, since this process requires technical knowledge and several steps.</p>
+  <p>We will update the <a href="https://github.com/ACCIDDA/measles-AA" target="_blank" rel="noopener">measles-AA repository</a> README to explain how contributors can:</p>
+  <ul>
+    <li>Create a measles-XX repository from the template.</li>
+    <li>Format vaccination data according to the required CSV schema.</li>
+    <li>Run preparation scripts, validation tools, and automated tests.</li>
+    <li>Interpret validation errors and confirm GitHub Actions checks pass.</li>
+    <li>Submit a pull request to register their state in the central dashboard.</li>
+    <li>Update state data after initial registration.</li>
+  </ul>
+  <p>We will include example commands, sample data references, and troubleshooting guidance. Documentation will clarify that creating a state repository does not automatically make it available in the dashboard; an administrator must approve and register the state.</p>
+  <p>We also plan to create a short video tutorial (approximately 5&ndash;7 minutes) demonstrating the state contribution process using the repository template, sample data, validation tools, and registration pull request. The video will be linked from our project website and shared with ACCIDDA at handoff.</p>
+
+  <h2>5. Administrator Documentation</h2>
+  <p>We will maintain administrator instructions in the central <a href="https://github.com/ACCIDDA/measles-dashboard" target="_blank" rel="noopener">dashboard repository</a>, building on existing documentation where appropriate.</p>
+  <p>These instructions will cover local setup and dependencies, configuration, GitHub Pages deployment, and reviewing state-registration pull requests. We will also explain how to verify successful data loading, investigate unavailable state data, troubleshoot deployment failures, and restore a previous working deployment.</p>
+  <p>Administrator instructions will remain separate from developer-focused architecture documentation.</p>
+
+  <h2>6. Documentation Delivery and Accessibility</h2>
+  <p>We will primarily use GitHub Markdown documentation because it is easy to maintain alongside the code and familiar to the technical contributors and administrators working with the repositories.</p>
+  <p>Public-facing guidance will be linked from the dashboard, while technical documentation will remain in the relevant repositories. Our project website will link to the state contribution video and key documentation resources.</p>
+  <p>We will use clear headings, concise instructions, readable examples, and descriptive links. The instructional video will include captions, and its essential steps will also be available in writing.</p>
+
+  <h2>7. Documentation Verification</h2>
+  <p>We will develop and update documentation as implementation progresses. Before final delivery, we will verify that instructions match the completed software, commands work as described, and all documentation and video links are accessible.</p>
+  <p>When possible, a team member unfamiliar with a particular workflow will follow the instructions to identify unclear steps. We will avoid documenting features that have not been implemented.</p>
+</main>
+
+<footer class="site-footer">
+  <p>Team F &mdash; COMP 523, UNC-Chapel Hill</p>
+  <div class="copy-row">
+    <code id="footer-team-emails">kgbro@unc.edu, cgbryan@unc.edu, sadies@email.unc.edu, lkbriden@unc.edu</code>
+    <button type="button" class="copy-btn" data-copy-target="footer-team-emails" data-label="Copy">Copy</button>
+  </div>
+</footer>
+
+<script src="../script.js" defer></script>
+</body>
+</html>
