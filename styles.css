@@ -333,7 +333,7 @@ footer.site-footer a {
 }
 
 .requirements-list .requirements-list {
-  margin-left: 2.25rem;
+  margin: 0.5rem 0 0 2.25rem;
 }
 
 .card .copy-row {
