@@ -141,6 +141,14 @@ h2:first-of-type {
   margin-top: 0;
 }
 
+.final-checklist-page .requirement-subsection {
+  color: var(--navy);
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+  padding-left: 0.65rem;
+  border-left: 3px solid var(--carolina-blue);
+}
+
 .card {
   background: var(--bg-soft);
   border: 1px solid var(--border);
@@ -303,23 +311,23 @@ footer.site-footer a {
   background: #2e7d32;
 }
 
-.requirements-list {
+.final-checklist-page .requirements-list {
   list-style: none;
   padding-left: 0;
 }
 
-.requirements-list > li {
+.final-checklist-page .requirements-list > li {
   margin: 0.75rem 0;
 }
 
-.requirements-list label {
+.final-checklist-page .requirements-list label {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
   cursor: pointer;
 }
 
-.requirements-list input[type="checkbox"] {
+.final-checklist-page .requirements-list input[type="checkbox"] {
   accent-color: var(--navy);
   flex: 0 0 1.5rem;
   width: 1.5rem;
@@ -327,12 +335,12 @@ footer.site-footer a {
   margin: 0.15rem 0 0;
 }
 
-.requirements-list input[type="checkbox"]:focus-visible {
+.final-checklist-page .requirements-list input[type="checkbox"]:focus-visible {
   outline: 3px solid #2775ab;
   outline-offset: 3px;
 }
 
-.requirements-list .requirements-list {
+.final-checklist-page .requirements-list .requirements-list {
   margin: 0.5rem 0 0 2.25rem;
 }
 
