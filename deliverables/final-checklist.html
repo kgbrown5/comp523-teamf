@@ -41,8 +41,8 @@
   <p>GitHub: <a href="https://github.com/ACCIDDA/measles-dashboard" target="_blank" rel="noopener">https://github.com/ACCIDDA/measles-dashboard</a></p>
 
   <h2>Requirements</h2>
-  <h3>Functional Requirements</h3>
-  <h4>Definite/Completed</h4>
+  <h2>Functional Requirements</h2>
+  <h3>Definite/Completed</h3>
   <ul class="requirements-list">
     <li><label><input type="checkbox" />Data displays accurately based on county and school</label></li>
     <li><label><input type="checkbox" />Decouple hard-coded NC and CA data from the existing project repository</label></li>
@@ -78,21 +78,21 @@
       <p>Interfaces remain consistent with original design and functionality, as agreed upon by client & team.</p>
 
 
-  <h4>Improbable/Uncompleted</h4>
+  <h3>Improbable/Uncompleted</h3>
   <ul class="requirements-list">
     <li><label><input type="checkbox" />CHECK: Data cleaning scripts to take data and match it to required API for use in dashboard</label></li>
     <li><label><input type="checkbox" />CHECK:Scripts to validate each individual API</label></li>
     <li>
       <label><input type="checkbox" />Moving to Vercel</label>
-      <ul class="requirements-list">
-        <li><label><input type="checkbox" />Budget constraints from ACCIDDA team & a need for collaboration prevented us from exploring alternative hosting options</label></li>
+      <ul>
+        <li>Budget constraints from ACCIDDA team & a need for collaboration prevented us from exploring alternative hosting options</li>
       </ul>
     </li>
   </ul>
 
 
-  <h3>Non-functional</h3>
-  <h4>Definite/Completed</h4>
+  <h2>Non-Functional Requirements</h2>
+  <h3>Definite/Completed</h3>
   <ul class="requirements-list">
     <li><label><input type="checkbox" />Usability: The API should be able to be used by health officials from varying states. The user instructions are understandable to scientists without a software engineering background.</label></li>
     <li><label><input type="checkbox" />Reliability: Should be accessible at all hours of the day/even after new information is updated</label></li>
@@ -102,9 +102,9 @@
     <li><label><input type="checkbox" />Design: same consistency in naming and typography as currently website holds</label></li>
     <li>
       <label><input type="checkbox" />CHECK: Implementation: Application must expose APIs written in a language that is accessible to the users (ideally python)</label>
-      <ul class="requirements-list">
-        <li><label><input type="checkbox" />Will continue to host on GitHub Pages (as opposed to Vercel or other platforms) because of client's hosting preferences</label></li>
-        <li><label><input type="checkbox" />Must remain static to keep free access</label></li>
+      <ul>
+        <li>Will continue to host on GitHub Pages (as opposed to Vercel or other platforms) because of client's hosting preferences</li>
+        <li>Must remain static to keep free access</li>
       </ul>
     </li>
     <li><label><input type="checkbox" />Interface: Leverage the imuGap model for Bayesian model as necessary for estimation.</label></li>
@@ -115,12 +115,14 @@
     <li><label><input type="checkbox" />CHECK:Supportability: Support light and dark mode</label></li>
   </ul>
 
-  <h4>Improbable</h4>
+  <h3>Improbable</h3>
   <ul class="requirements-list">
     <li>
+        <li><label><input type="checkbox" />Supportability: Support light and dark mode</label></li>
+        <ul><li>Client did not request any interface changes</li></ul>
       <label><input type="checkbox" />Collecting data from all states and imputed into the ACCIDDA dashboard</label>
-      <ul class="requirements-list">
-        <li><label><input type="checkbox" />Client did not request data collection for project</label></li>
+      <ul>
+        <li>Client did not request data collection for project</li>
       </ul>
     </li>
   </ul>
