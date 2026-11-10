@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Deliverables | Team F COMP 523</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">Team <span>F</span> &mdash; COMP 523</a>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="../team.html">Team</a></li>
+        <li><a href="../schedule.html">Todo &amp; Schedule</a></li>
+        <li><a href="../journal.html">Journal</a></li>
+        <li class="nav-dropdown"><a href="../deliverables.html" aria-haspopup="true">Deliverables</a><ul class="dropdown-menu">
+          <li><a href="rules.html">Team Rules</a></li>
+          <li><a href="specifications.html" aria-current="page">Specifications</a></li>
+          <li><a href="platform-selection.html">Platform Selection</a></li>
+          <li><a href="architecture.html">Architecture Analysis</a></li>
+          <li><a href="systems-metaphor.html">Systems Metaphor</a></li>
+          <li><a href="https://docs.google.com/presentation/d/1eMHFSh3-HdcFHqu0aMNRiPqwZpAM95kY/edit?slide=id.p8#slide=id.p8">Midterm Presentation</a></li>
+          <li><a href="demo-10-18.html">Demo 10/18</a></li>
+          <li><a href="ethics-assignment.html">Ethics Assignment</a></li>
+          <li><a href="test-plan.html">Test Plan</a></li>
+          <li><a href="documentation-plan.html">Documentation/User Manual Plan</a></li>
+        </ul></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main>
+  <h1>D1: Specification Document</h1>
+
+  <p>Current site: Single-page Vite + React 18 app. Page chrome is React; the interactive map is D3 over us-atlas TopoJSON. Deployed as a static site on GitHub Pages under the /measles-dashboard/ base path.</p>
+
+  <p>GitHub: <a href="https://github.com/ACCIDDA/measles-dashboard" target="_blank" rel="noopener">https://github.com/ACCIDDA/measles-dashboard</a></p>
+
+  <h2>Requirements</h2>
+  <h3>Functional Requirements</h3>
+  <h4>Definite/Completed</h4>
+  <ul>
+    <li>Data displays accurately based on county and school</li>
+    <li>Decouple hard-coded NC and CA data from the existing project repository</li>
+    <li>CHECK: Generalize to measles-dashboard-StateCode API that other states can follow</li>
+    <li>Accept data from measles-XX state repositories, given that no 404 error is received</li>
+    <ul>
+        <li>404 error recieved → state will remain inactive</li>
+        <li>No error → populate map with state’s data</li>
+    </ul>
+  </ul>
+  <h5>404 Fallback</h5>
+  <p>Our initially outlined 404 plan is completed and functional.</p>
+  <ul>
+    <li>Accept data from measles-XX state repositories</li>
+    <ul>
+        <li>404 error recieved → catch error → state marked inactive → rendered on map as grey</li>
+        <li>No error → state marked active → assign state tier and color → populate map with state’s data</li>
+    </ul>
+    <li>When a inactive state is clicked, use the existing toast "Data not yet available for [state]"</li>
+    <li>If inactive state accessed from URL, D3 map package handles the display</li>
+    <ul>
+      <li>Centers on grey selected state, back button shown</li>
+      <li>Next click routes back to US overview</li>
+    </ul>
+    </ul>
+    <h5>Interfaces</h5>
+      <p>Interfaces remain consistent with original design and functionality, as agreed upon by client & team.</p>
+
+
+  <h4>Improbable/Uncompleted</h4>
+  <ul>
+    <li>CHECK: Data cleaning scripts to take data and match it to required API for use in dashboard</li>
+    <li>CHECK:Scripts to validate each individual API</li>
+    <li>Moving to Vercel</li>
+    <ul><li>Budget constraints from ACCIDDA team & a need for collaboration prevented us from exploring alternative hosting options</li></ul>
+  </ul>
+
+
+  <h3>Non-functional</h3>
+  <h4>Definite/Completed</h4>
+  <ul>
+    <li>Usability: The API should be able to be used by health officials from varying states. The user instructions are understandable to scientists without a software engineering background.</li>
+    <li>Reliability: Should be accessible at all hours of the day/even after new information is updated</li>
+    <li>Performance: Should be able to handle concurrent users from all 50 states without loss</li>
+    <li>CHECK: Supportability: APIs should come with regressions tests and appropriate documentations</li>
+    <li>Physical: Should work on web devices</li>
+    <li>Design: same consistency in naming and typography as currently website holds</li>
+    <li>CHECK: Implementation: Application must expose APIs written in a language that is accessible to the users (ideally python)</li>
+    <ul>
+      <li>Will continue to host on GitHub Pages (as opposed to Vercel or other platforms) because of client's hosting preferences</li>
+      <li>Must remain static to keep free access</li>
+    </ul>
+    <li>Interface: Leverage the imuGap model for Bayesian model as necessary for estimation.</li>
+  </ul>
+
+  <h4>Perhaps</h4>
+  <ul>
+    <li>CHECK:Supportability: Support light and dark mode</li>
+  </ul>
+
+  <h4>Improbable</h4>
+  <ul>
+    <li>Collecting data from all states and imputed into the ACCIDDA dashboard</li>
+    <ul><li>Client did not request data collection for project</li></ul>
+  </ul>
+</main>
+
+<footer class="site-footer">
+  <p>Team F &mdash; COMP 523, UNC-Chapel Hill</p>
+  <div class="copy-row">
+    <code id="footer-team-emails">kgbro@unc.edu, cgbryan@unc.edu, sadies@email.unc.edu, lkbriden@unc.edu</code>
+    <button type="button" class="copy-btn" data-copy-target="footer-team-emails" data-label="Copy">Copy</button>
+  </div>
+</footer>
+
+<script src="../script.js" defer></script></body>
+</html>
