@@ -43,70 +43,86 @@
   <h2>Requirements</h2>
   <h3>Functional Requirements</h3>
   <h4>Definite/Completed</h4>
-  <ul>
-    <li>Data displays accurately based on county and school</li>
-    <li>Decouple hard-coded NC and CA data from the existing project repository</li>
-    <li>CHECK: Generalize to measles-dashboard-StateCode API that other states can follow</li>
-    <li>Accept data from measles-XX state repositories, given that no 404 error is received</li>
-    <ul>
-        <li>404 error recieved → state will remain inactive</li>
-        <li>No error → populate map with state’s data</li>
-    </ul>
+  <ul class="requirements-list">
+    <li><label><input type="checkbox" />Data displays accurately based on county and school</label></li>
+    <li><label><input type="checkbox" />Decouple hard-coded NC and CA data from the existing project repository</label></li>
+    <li><label><input type="checkbox" />CHECK: Generalize to measles-dashboard-StateCode API that other states can follow</label></li>
+    <li>
+      <label><input type="checkbox" />Accept data from measles-XX state repositories, given that no 404 error is received</label>
+      <ul class="requirements-list">
+        <li><label><input type="checkbox" />404 error recieved → state will remain inactive</label></li>
+        <li><label><input type="checkbox" />No error → populate map with state’s data</label></li>
+      </ul>
+    </li>
   </ul>
   <h5>404 Fallback</h5>
   <p>Our initially outlined 404 plan is completed and functional.</p>
-  <ul>
-    <li>Accept data from measles-XX state repositories</li>
-    <ul>
-        <li>404 error recieved → catch error → state marked inactive → rendered on map as grey</li>
-        <li>No error → state marked active → assign state tier and color → populate map with state’s data</li>
-    </ul>
-    <li>When a inactive state is clicked, use the existing toast "Data not yet available for [state]"</li>
-    <li>If inactive state accessed from URL, D3 map package handles the display</li>
-    <ul>
-      <li>Centers on grey selected state, back button shown</li>
-      <li>Next click routes back to US overview</li>
-    </ul>
+  <ul class="requirements-list">
+    <li>
+      <label><input type="checkbox" />Accept data from measles-XX state repositories</label>
+      <ul class="requirements-list">
+        <li><label><input type="checkbox" />404 error recieved → catch error → state marked inactive → rendered on map as grey</label></li>
+        <li><label><input type="checkbox" />No error → state marked active → assign state tier and color → populate map with state’s data</label></li>
+      </ul>
+    </li>
+    <li><label><input type="checkbox" />When a inactive state is clicked, use the existing toast "Data not yet available for [state]"</label></li>
+    <li>
+      <label><input type="checkbox" />If inactive state accessed from URL, D3 map package handles the display</label>
+      <ul class="requirements-list">
+      <li><label><input type="checkbox" />Centers on grey selected state, back button shown</label></li>
+      <li><label><input type="checkbox" />Next click routes back to US overview</label></li>
+      </ul>
+    </li>
     </ul>
     <h5>Interfaces</h5>
       <p>Interfaces remain consistent with original design and functionality, as agreed upon by client & team.</p>
 
 
   <h4>Improbable/Uncompleted</h4>
-  <ul>
-    <li>CHECK: Data cleaning scripts to take data and match it to required API for use in dashboard</li>
-    <li>CHECK:Scripts to validate each individual API</li>
-    <li>Moving to Vercel</li>
-    <ul><li>Budget constraints from ACCIDDA team & a need for collaboration prevented us from exploring alternative hosting options</li></ul>
+  <ul class="requirements-list">
+    <li><label><input type="checkbox" />CHECK: Data cleaning scripts to take data and match it to required API for use in dashboard</label></li>
+    <li><label><input type="checkbox" />CHECK:Scripts to validate each individual API</label></li>
+    <li>
+      <label><input type="checkbox" />Moving to Vercel</label>
+      <ul class="requirements-list">
+        <li><label><input type="checkbox" />Budget constraints from ACCIDDA team & a need for collaboration prevented us from exploring alternative hosting options</label></li>
+      </ul>
+    </li>
   </ul>
 
 
   <h3>Non-functional</h3>
   <h4>Definite/Completed</h4>
-  <ul>
-    <li>Usability: The API should be able to be used by health officials from varying states. The user instructions are understandable to scientists without a software engineering background.</li>
-    <li>Reliability: Should be accessible at all hours of the day/even after new information is updated</li>
-    <li>Performance: Should be able to handle concurrent users from all 50 states without loss</li>
-    <li>CHECK: Supportability: APIs should come with regressions tests and appropriate documentations</li>
-    <li>Physical: Should work on web devices</li>
-    <li>Design: same consistency in naming and typography as currently website holds</li>
-    <li>CHECK: Implementation: Application must expose APIs written in a language that is accessible to the users (ideally python)</li>
-    <ul>
-      <li>Will continue to host on GitHub Pages (as opposed to Vercel or other platforms) because of client's hosting preferences</li>
-      <li>Must remain static to keep free access</li>
-    </ul>
-    <li>Interface: Leverage the imuGap model for Bayesian model as necessary for estimation.</li>
+  <ul class="requirements-list">
+    <li><label><input type="checkbox" />Usability: The API should be able to be used by health officials from varying states. The user instructions are understandable to scientists without a software engineering background.</label></li>
+    <li><label><input type="checkbox" />Reliability: Should be accessible at all hours of the day/even after new information is updated</label></li>
+    <li><label><input type="checkbox" />Performance: Should be able to handle concurrent users from all 50 states without loss</label></li>
+    <li><label><input type="checkbox" />CHECK: Supportability: APIs should come with regressions tests and appropriate documentations</label></li>
+    <li><label><input type="checkbox" />Physical: Should work on web devices</label></li>
+    <li><label><input type="checkbox" />Design: same consistency in naming and typography as currently website holds</label></li>
+    <li>
+      <label><input type="checkbox" />CHECK: Implementation: Application must expose APIs written in a language that is accessible to the users (ideally python)</label>
+      <ul class="requirements-list">
+        <li><label><input type="checkbox" />Will continue to host on GitHub Pages (as opposed to Vercel or other platforms) because of client's hosting preferences</label></li>
+        <li><label><input type="checkbox" />Must remain static to keep free access</label></li>
+      </ul>
+    </li>
+    <li><label><input type="checkbox" />Interface: Leverage the imuGap model for Bayesian model as necessary for estimation.</label></li>
   </ul>
 
   <h4>Perhaps</h4>
-  <ul>
-    <li>CHECK:Supportability: Support light and dark mode</li>
+  <ul class="requirements-list">
+    <li><label><input type="checkbox" />CHECK:Supportability: Support light and dark mode</label></li>
   </ul>
 
   <h4>Improbable</h4>
-  <ul>
-    <li>Collecting data from all states and imputed into the ACCIDDA dashboard</li>
-    <ul><li>Client did not request data collection for project</li></ul>
+  <ul class="requirements-list">
+    <li>
+      <label><input type="checkbox" />Collecting data from all states and imputed into the ACCIDDA dashboard</label>
+      <ul class="requirements-list">
+        <li><label><input type="checkbox" />Client did not request data collection for project</label></li>
+      </ul>
+    </li>
   </ul>
 </main>
 

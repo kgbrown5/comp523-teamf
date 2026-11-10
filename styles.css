@@ -303,6 +303,39 @@ footer.site-footer a {
   background: #2e7d32;
 }
 
+.requirements-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.requirements-list > li {
+  margin: 0.75rem 0;
+}
+
+.requirements-list label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.requirements-list input[type="checkbox"] {
+  accent-color: var(--navy);
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.15rem 0 0;
+}
+
+.requirements-list input[type="checkbox"]:focus-visible {
+  outline: 3px solid #2775ab;
+  outline-offset: 3px;
+}
+
+.requirements-list .requirements-list {
+  margin-left: 2.25rem;
+}
+
 .card .copy-row {
   display: flex;
   justify-content: space-between;
