@@ -122,7 +122,7 @@ states/&lt;state-code&gt;/schools.csv</code></pre>
     <li>Publish the prepared CSV bundle from the state repository.</li>
     <li>Run the dashboard checks and verify the public URLs in a browser.</li>
   </ol>
-  <p>The current registration design records a source commit so reviewers can tell which data version is being used. An automated &ldquo;new data update&rdquo; workflow is described as future work, so updates currently require a maintainer&rsquo;s review and deployment rather than happening automatically.</p>
+  <p>The current registration design records a source commit so reviewers can tell which data version is being used. Updates currently require a maintainer&rsquo;s PR approval to trigger automatic deployment.</p>
 
   <h3>Adding another state</h3>
   <p>Use the same state-repository format, validate the bundle, and submit it through the registration workflow. The dashboard&rsquo;s state registry is intended to be the single source of truth; adding a state should not require rewriting the map or page components.</p>
