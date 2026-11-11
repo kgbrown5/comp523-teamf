@@ -145,18 +145,6 @@ states/&lt;state-code&gt;/schools.csv</code></pre>
   </ul>
   <p>If usage grows substantially, the client should monitor GitHub Pages bandwidth and Actions usage. The static build can be moved to another static host later, but that would be a hosting migration rather than a change to the application itself.</p>
 
-  <h2>Client decisions required before final acceptance</h2>
-  <p>The client and development team should document these decisions in the handoff meeting:</p>
-  <ul>
-    <li>Which ACCIDDA organization administrators own GitHub, Pages, and any domain?</li>
-    <li>What is the authoritative <code>measles-ca</code> repository URL and who maintains it?</li>
-    <li>Should California be listed as available now, or remain disabled until its repository passes registration validation?</li>
-    <li>Who approves a new reporting period and who reviews the resulting pull request?</li>
-    <li>What reporting period and data freshness target should the public site show?</li>
-    <li>Is a custom domain required, or is the GitHub Pages URL acceptable?</li>
-    <li>Who receives alerts when a GitHub Actions build or public data endpoint fails?</li>
-  </ul>
-
   <h2>Evidence used for this plan</h2>
   <ul>
     <li>Dashboard deployment workflow in <a href="https://github.com/ACCIDDA/measles-dashboard/blob/main/.github/workflows/deploy.yml"><code>.github/workflows/deploy.yml</code></a>.</li>
@@ -166,7 +154,6 @@ states/&lt;state-code&gt;/schools.csv</code></pre>
     <li>North Carolina repository history at <a href="https://github.com/cgbryan1/measles-NC"><code>measles-NC</code></a>.</li>
     <li>Latest dashboard registration work: <a href="https://github.com/kgbrown5/measles-dashboard/commit/38d50edb0ee574bb502e5f2f95cf85d87ada954c">registration commit</a> and the subsequent <a href="https://github.com/kgbrown5/measles-dashboard/commit/e0673fff535c36a6cb0163152ef123693de591c4">revert on <code>dev</code></a>.</li>
   </ul>
-  <p>The ownership, California URL, data-freshness target, and custom-domain choices above are client decisions, not assumptions that should be silently filled in by the development team.</p>
 </main>
 
 <footer class="site-footer">
